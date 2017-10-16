@@ -160,7 +160,7 @@ lib:
 	make -C util_adcfifo
 	make -C util_axis_fifo
 	make -C util_axis_resize
-	make -C util_axis_upscale clean
+	make -C util_axis_upscale
 	make -C util_bsplit
 	make -C util_cdc
 	make -C util_cic
