@@ -125,7 +125,7 @@ module system_top (
 
   // instantiations
 
-  assign gpio_i[63:50] = 14'b0;
+  assign gpio_i[63:50] = gpio_o[63:50];
   ad_iobuf #(
     .DATA_WIDTH(18)
   ) i_iobuf_ad713x_gpio (

@@ -172,6 +172,9 @@ module system_top (
     .dio_o(gpio_i[31:0]),
     .dio_p(gpio_bd));
 
+  assign gpio_i[47:39] = gpio_o[47:39];
+  assign gpio_i[63:55] = gpio_o[63:55];
+
   ad_iobuf #(
     .DATA_WIDTH(2)
   ) i_iic_mux_scl (
