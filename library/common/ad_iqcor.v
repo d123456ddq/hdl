@@ -119,7 +119,6 @@ module ad_iqcor #(
   generate
   if (SCALE_ONLY == 0) begin
     // scaling functions - q
-    reg [15:0]  p1_data_q = 'd0;
 
     ad_mul #(.DELAY_DATA_WIDTH(16)) i_mul_q (
       .clk (clk),
@@ -159,7 +158,6 @@ module ad_iqcor #(
     assign p1_data_q_int = 16'h0;
   end
   endgenerate
-
 
   always @(posedge clk) begin
     p1_valid <= p1_valid_s;
