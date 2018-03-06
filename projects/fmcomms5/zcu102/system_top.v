@@ -185,10 +185,13 @@ module system_top (
   assign spi_mosi = spi0_mosi;
   assign spi0_miso = spi_miso;
   assign spi1_miso = 1'b0;
+  assign gpio_debug_3_1 = 1'b0;
+  assign gpio_debug_4_1 = 1'b0;
 
   system_wrapper i_system_wrapper (
     .gpio_i (gpio_i),
     .gpio_o (gpio_o),
+    .gpio_t (),
     .ps_intr_00 (1'b0),
     .ps_intr_01 (1'b0),
     .ps_intr_02 (1'b0),
