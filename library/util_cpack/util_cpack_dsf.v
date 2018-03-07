@@ -40,25 +40,25 @@ module util_cpack_dsf #(
   parameter   CHANNEL_DATA_WIDTH  = 32,
   parameter   NUM_OF_CHANNELS_I   =  4,
   parameter   NUM_OF_CHANNELS_M   =  8,
-  parameter   NUM_OF_CHANNELS_P   =  4,
-  localparam  I_WIDTH = CHANNEL_DATA_WIDTH*NUM_OF_CHANNELS_I,
-  localparam  P_WIDTH = CHANNEL_DATA_WIDTH*NUM_OF_CHANNELS_P) (
+  parameter   NUM_OF_CHANNELS_P   =  4) (
 
   // adc interface
 
   input                   adc_clk,
   input                   adc_valid,
   input                   adc_enable,
-  input       [(I_WIDTH-1):0]  adc_data,
+  input       [(CHANNEL_DATA_WIDTH*NUM_OF_CHANNELS_I-1):0]  adc_data,
 
   // dma interface
 
   output  reg             adc_dsf_valid,
   output  reg             adc_dsf_sync,
-  output  reg [(P_WIDTH-1):0]  adc_dsf_data);
+  output  reg [(CHANNEL_DATA_WIDTH*NUM_OF_CHANNELS_P-1):0]  adc_dsf_data);
 
 
   localparam  CH_DCNT = NUM_OF_CHANNELS_P - NUM_OF_CHANNELS_I;
+  localparam  I_WIDTH = CHANNEL_DATA_WIDTH*NUM_OF_CHANNELS_I;
+  localparam  P_WIDTH = CHANNEL_DATA_WIDTH*NUM_OF_CHANNELS_P;
   localparam  M_WIDTH = CHANNEL_DATA_WIDTH*NUM_OF_CHANNELS_M;
 
   // internal registers
